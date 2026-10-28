@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+credentials/
+evidence/raw/
+*.pem
+*.key
+*.pfx
+*.evtx
+*.pcap
+*.pcapng
+*.zip
+*.iso
+*.vdi
+*.vmdk
+*.vhdx
+*.qcow2

@@ -1,0 +1,12 @@
+<group name="soc_lab,powershell,">
+  <rule id="100100" level="7">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\(?:powershell|pwsh)\.exe$</field>
+    <!-- shortcut: covers -enc and -EncodedCommand; extend aliases after validating endpoint samples. -->
+    <field name="win.eventdata.commandLine" type="pcre2">(?i)(?:^|\s)-(?:enc|encodedcommand)\s+\S+</field>
+    <description>SOC lab: PowerShell encoded command on $(win.system.computer) by $(win.eventdata.user)</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+</group>
